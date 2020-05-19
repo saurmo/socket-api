@@ -1,0 +1,29 @@
+{
+  "name": "sockets-api",
+  "version": "1.0.0",
+  "description": "Ejemplo para sockets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurmo/socket-api.git"
+  },
+  "keywords": [
+    "sockets",
+    "socket",
+    "io",
+    "node"
+  ],
+  "author": "saurmo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurmo/socket-api/issues"
+  },
+  "homepage": "https://github.com/saurmo/socket-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
