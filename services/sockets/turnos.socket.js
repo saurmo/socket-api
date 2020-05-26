@@ -7,7 +7,7 @@ const generarTurno = (socket) => {
     let turno = turnos.generarTurno();
     callback(turno);
     estadoTurnosBroadcast(socket, {
-      info: { actual: turno, turnos: turnos.getTurnos() },
+      info: { actual: turnos.getTurnosEnAtencion(), turnos: turnos.getTurnos() },
     });
   });
 };

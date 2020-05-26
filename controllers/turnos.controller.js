@@ -2,14 +2,13 @@ class Turnos {
   constructor() {
     this.ultimo = 0;
     this.turnos = [];
-    this.turnosCompleto = [];
+    this.turnosEnAtencion = [];
   }
 
   generarTurno() {
     this.ultimo += 1;
     let turno = { numero: this.ultimo, caja: null, estado: "Sin atender" };
     this.turnos.push(turno);
-    this.turnosCompleto.push(turno);
     return { ok: true, mensaje: `Turno generado: ${this.ultimo}`, info: turno };
   }
 
@@ -23,18 +22,21 @@ class Turnos {
     turno.estado = "Atendiendo en la caja " + caja;
 
     let turnoActual = this.turnos.shift();
+    this.turnosEnAtencion.push(turnoActual);
 
-    //Actualizar array de turnos completos
-    this.turnosCompleto.push(turno);
     return {
       ok: true,
       mensaje: turno.estado,
-      info: { turnos: this.turnos, actual: turnoActual },
+      info: { turnos: this.turnos, actual: this.turnosEnAtencion },
     };
   }
 
   getTurnos() {
     return this.turnos;
+  }
+
+  getTurnosEnAtencion() {
+    return this.turnosEnAtencion;
   }
 }
 
